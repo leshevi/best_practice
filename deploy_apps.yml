@@ -1,0 +1,14 @@
+---
+
+
+#- hosts: loadbalancer
+#  roles:
+#    - os/dnf-repos
+#    - apps/nginx
+
+
+- hosts: appservers
+  roles:
+#    - os/dnf-repos
+#    - apps/django
+    - apps/gunicorn

@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  roles:
+    - os/new-user
+    - os/set-hostname
+    - os/selinux
+    - os/dnf-repos
+    - os/logrotate
+    - os/firewalld
+    - os/common

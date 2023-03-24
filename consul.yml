@@ -1,0 +1,17 @@
+---
+
+- hosts: consul-cluster
+  gather_facts: false
+  serial: 1
+  ignore_unreachable: true
+  roles:
+    - infra/consul-cluster
+    - monitoring/node_exporter
+
+#better to specify host, no need to run on each machine every time---> may cause damage on running consul-agents
+- hosts: all, !consul-cluster
+  gather_facts: false
+  ignore_unreachable: true
+  roles:
+    - infra/consul-agent
+    - monitoring/node_exporter

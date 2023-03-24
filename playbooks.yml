@@ -1,0 +1,6 @@
+---
+
+- hosts: appservers
+  roles:
+    - nginx
+

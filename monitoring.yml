@@ -1,0 +1,10 @@
+---
+
+- hosts: prometheus
+  gather_facts: false
+  serial: 1
+  ignore_unreachable: true
+  roles:
+    - monitoring/prometheus
+    - monitoring/grafana
+
